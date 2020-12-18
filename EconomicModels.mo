@@ -22,19 +22,90 @@ model EconomicModels
                    1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998, 1999, 2000,
                    2001, 2002, 2003, 2004, 2005, 2006, 2007, 2008, 2009, 2010,
                    2011, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019};
-  // Actual historical data
-  // U.S. Bureau of Economic Analysis, Real Gross Domestic Product [GDPC1],
-  // retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GDPC1, May 22, 2019.		   
-  Real y_values[:] = {6947.042e+9, 6794.878e+9, 6892.144e+9, 7483.371e+9,
-                      7824.247e+9, 8148.603e+9, 8369.93e+9, 8725.006e+9,
-                      9101.508e+9, 9358.289e+9, 9269.367e+9, 9534.346e+9,
-                      9850.973e+9, 10188.954e+9, 10543.644e+9, 10817.896e+9,
-                      11284.587e+9, 11832.486e+9, 12403.293e+9, 12924.179e+9,
-                      13222.69e+9, 13397.002e+9, 13634.253e+9, 14221.147e+9,
-                      14771.602e+9, 15267.026e+9, 15493.328e+9, 15671.383e+9,
-                      15155.94e+9, 15415.145e+9, 15712.754e+9, 16129.418e+9,
-                      16382.964e+9, 16621.696e+9, 17254.744e+9, 17523.374e+9,
-                      17863.023e+9, 18323.963e+9, 18912.326e+9};
+// Real GDP (quarterly data)
+// U.S. Bureau of Economic Analysis, Real Gross Domestic Product [GDPC1], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GDPC1, November 10, 2020.
+  Real y_values[:] = {6837.641,6696.753,6688.794,6813.535,
+                      6947.042,6895.559,6978.135,6902.105,
+                      6794.878,6825.876,6799.781,6802.497,
+                      6892.144,7048.982,7189.896,7339.893,
+                      7483.371,7612.668,7686.059,7749.151,
+                      7824.247,7893.136,8013.674,8073.239,
+                      8148.603,8185.303,8263.639,8308.021,
+                      8369.93,8460.233,8533.635,8680.162,
+                      8725.006,8839.641,8891.435,9009.913,
+                      9101.508,9170.977,9238.923,9257.128,
+                      9358.289,9392.251,9398.499,9312.937,
+                      9269.367,9341.642,9388.845,9421.565,
+                      9534.346,9637.732,9732.979,9834.51,
+                      9850.973,9908.347,9955.641,10091.049,
+                      10188.954,10327.019,10387.382,10506.372,
+                      10543.644,10575.1,10665.06,10737.478,
+                      10817.896,10998.322,11096.976,11212.205,
+                      11284.587,11472.137,11615.636,11715.393,
+                      11832.486,11942.032,12091.614,12287.0,
+                      12403.293,12498.694,12662.385,12877.593,
+                      12924.179,13160.842,13178.419,13260.506,
+                      13222.69,13299.984,13244.784,13280.859,
+                      13397.002,13478.152,13538.072,13559.032,
+                      13634.253,13751.543,13985.073,14145.645,
+                      14221.147,14329.523,14464.984,14609.876,
+                      14771.602,14839.782,14972.054,15066.597,
+                      15267.026,15302.705,15326.368,15456.928,
+                      15493.328,15582.085,15666.738,15761.967,
+                      15671.383,15752.308,15667.032,15328.027,
+                      15155.94,15134.117,15189.222,15356.058,
+                      15415.145,15557.277,15671.967,15750.625,
+                      15712.754,15825.096,15820.7,16004.107,
+                      16129.418,16198.807,16220.667,16239.138,
+                      16382.964,16403.18,16531.685,16663.649,
+                      16616.54,16841.475,17047.098,17143.038,
+                      17305.752,17422.845,17486.021,17514.062,
+                      17613.264,17668.203,17764.388,17876.179,
+                      17977.299,18054.052,18185.636,18359.432,
+                      18530.483,18654.383,18752.355,18813.923,
+                      18950.347,19020.599,19141.744,19253.959};
+
+  Real quarters[:] = {1980.00,1980.25,1980.50,1980.75,
+                      1981.00,1981.25,1981.50,1981.75,
+                      1982.00,1982.25,1982.50,1982.75,
+                      1983.00,1983.25,1983.50,1983.75,
+                      1984.00,1984.25,1984.50,1984.75,
+                      1985.00,1985.25,1985.50,1985.75,
+                      1986.00,1986.25,1986.50,1986.75,
+                      1987.00,1987.25,1987.50,1987.75,
+                      1988.00,1988.25,1988.50,1988.75,
+                      1989.00,1989.25,1989.50,1989.75,
+                      1990.00,1990.25,1990.50,1990.75,
+                      1991.00,1991.25,1991.50,1991.75,
+                      1992.00,1992.25,1992.50,1992.75,
+                      1993.00,1993.25,1993.50,1993.75,
+                      1994.00,1994.25,1994.50,1994.75,
+                      1995.00,1995.25,1995.50,1995.75,
+                      1996.00,1996.25,1996.50,1996.75,
+                      1997.00,1997.25,1997.50,1997.75,
+                      1998.00,1998.25,1998.50,1998.75,
+                      1999.00,1999.25,1999.50,1999.75,
+                      2000.00,2000.25,2000.50,2000.75,
+                      2001.00,2001.25,2001.50,2001.75,
+                      2002.00,2002.25,2002.50,2002.75,
+                      2003.00,2003.25,2003.50,2003.75,
+                      2004.00,2004.25,2004.50,2004.75,
+                      2005.00,2005.25,2005.50,2005.75,
+                      2006.00,2006.25,2006.50,2006.75,
+                      2007.00,2007.25,2007.50,2007.75,
+                      2008.00,2008.25,2008.50,2008.75,
+                      2009.00,2009.25,2009.50,2009.75,
+                      2010.00,2010.25,2010.50,2010.75,
+                      2011.00,2011.25,2011.50,2011.75,
+                      2012.00,2012.25,2012.50,2012.75,
+                      2013.00,2013.25,2013.50,2013.75,
+                      2014.00,2014.25,2014.50,2014.75,
+                      2015.00,2015.25,2015.50,2015.75,
+                      2016.00,2016.25,2016.50,2016.75,
+                      2017.00,2017.25,2017.50,2017.75,
+                      2018.00,2018.25,2018.50,2018.75,
+                      2019.00,2019.25,2019.50,2019.75};
 
   // Semega, J. L., Fontenot, K. R., & Kollar, M. A. (2017). Income and poverty in the United States: 2016. U.S. Census Bureau, Current Population Reports, (P60-259). Table 2 A
   // retrieved from https://www2.census.gov/programs-surveys/demo/tables/p60/263/tableA2.xls
@@ -45,7 +116,358 @@ model EconomicModels
                                 0.505, 0.497,	0.500, 0.503, 0.503,	0.511, 0.510, 0.510,	
                                 0.514, 0.512, 0.511, 0.515, 0.515, 0.515, 0.515};
   
+
+// Government expenditures to GDP ratio
+// U.S. Bureau of Economic Analysis, Government Consumption Expenditures and Gross Investment [GCEA], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GCEA, November 9, 2020.
+// U.S. Bureau of Economic Analysis, Gross Domestic Product [GDPA], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GDPA, November 9, 2020.
+  Real GCEA_GDPA[:] = {0.20404503589288821288,
+                       0.21277449025641271025,
+                       0.21093808044935138268,
+                       0.20504936951609775380,
+                       0.20984568028561557915,
+                       0.21313420229708463411,
+                       0.21245815066891991395,
+                       0.20602841091596997807,
+                       0.20417365348005346020,
+                       0.20770184318876082818,
+                       0.21093273622556461549,
+                       0.20620131475001177088,
+                       0.19901002528373671496,
+                       0.19242878918701137166,
+                       0.18972233250071435593,
+                       0.18491582314747627993,
+                       0.18036999367651749590,
+                       0.17782649699315345328,
+                       0.17863359978435544884,
+                       0.17818797978648206113,
+                       0.18420977030231655758,
+                       0.19098730498413648783,
+                       0.19297962358287647167,
+                       0.19149670084405009772,
+                       0.18992566871348799541,
+                       0.18996078716379160641,
+                       0.19311313561022595015,
+                       0.20267935943048404302,
+                       0.21271551419855806644,
+                       0.21042129523029936129,
+                       0.20256428436407798910,
+                       0.19367837527019652458,
+                       0.18662119788850076775,
+                       0.18074618402946998327,
+                       0.17711249529218757822,
+                       0.17600804477976215086,
+                       0.17433446690320514067,
+                       0.17442195054585318618,
+                       0.17486280413410468401};
+
+// Trade deficit to GDP ratio (data *(-1))
+// U.S. Bureau of Economic Analysis, Balance on Current Account, NIPA's [NETFI], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/NETFI, November 9, 2020.
+// U.S. Bureau of Economic Analysis, Gross Domestic Product [GDP], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/GDP, November 9, 2020.
+  Real NETFI_GDP[:] = {-0.00053357557088104946,
+                      -0.00019882100062853091,
+                      0.00227298049497713056,
+                      0.02009593521481535311,
+                      0.02113651278152546187,
+                      0.02846672969683847934,
+                      0.03196421295696287882,
+                      0.02500644541736738406,
+                      0.01935875562236028722,
+                      0.01533229769402528751,
+                      -0.00771808221729334247,
+                      0.00342427325540278939,
+                      0.00851762377926665427,
+                      0.01306500093034341758,
+                      0.01584916506132641274,
+                      0.01308094536318886980,
+                      0.01577943846780717368,
+                      0.01859351174310436611,
+                      0.02489035031830901204,
+                      0.03700662720660707236,
+                      0.03954146705982185032,
+                      0.03624235236193469023,
+                      0.04706833017585628551,
+                      0.04455809309414992355,
+                      0.05203232231857837466,
+                      0.05771139860803489697,
+                      0.05498604398514727275,
+                      0.04843383462428842077,
+                      0.02653400624555951639,
+                      0.02796869852289362049,
+                      0.03110161909449720355,
+                      0.02983890268504680283,
+                      0.02403179414627675481,
+                      0.02099054900872896138,
+                      0.02333303838902864953,
+                      0.02320900808850775272,
+                      0.01912401523383964650,
+                      0.02014739987694034472,
+                      0.02519693176169006099};
+// Civilian labour force
+// U.S. Bureau of Labor Statistics, Civilian Labor Force Level [CLF16OV], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CLF16OV, November 9, 2020.
+  Real CLF16OV[:] = {108912000,
+                     111083000,
+                     112327000,
+                     114581000,
+                     116354000,
+                     118611000,
+                     120729000,
+                     122622000,
+                     124497000,
+                     126142000,
+                     126664000,
+                     128554000,
+                     129941000,
+                     131951000,
+                     132511000,
+                     135113000,
+                     137155000,
+                     138634000,
+                     140177000,
+                     143248000,
+                     144305000,
+                     145066000,
+                     146729000,
+                     148059000,
+                     150030000,
+                     152732000,
+                     153918000,
+                     154655000,
+                     153111000,
+                     153650000,
+                     153995000,
+                     155628000,
+                     155182000,
+                     156332000,
+                     158035000,
+                     159710000,
+                     160538000,
+                     163111000,
+                     164550006};
+
+// Employment Level 
+// U.S. Bureau of Labor Statistics, Employment Level [CE16OV], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CE16OV, November 9, 2020.
+  Real CE16OV[:]={99645000,
+                  99032000,
+                  102996000,
+                  106223000,
+                  108216000,
+                  110728000,
+                  113793000,
+                  116104000,
+                  117830000,
+                  118241000,
+                  117466000,
+                  118997000,
+                  121464000,
+                  124721000,
+                  125088000,
+                  127860000,
+                  130679000,
+                  132602000,
+                  134523000,
+                  137614000,
+                  136047000,
+                  136426000,
+                  138411000,
+                  140125000,
+                  142752000,
+                  145970000,
+                  146273000,
+                  143369000,
+                  138013000,
+                  139301000,
+                  140902000,
+                  143330000,
+                  144778000,
+                  147615000,
+                  150128000,
+                  152216000,
+                  153977000,
+                  156825000,
+                  158803000};
+
+// Annual net change in household debt 
+// Board of Governors of the Federal Reserve System (US), Consumer Loans, All Commercial Banks [CONSUMER], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/CONSUMER, November 9, 2020.
+// Board of Governors of the Federal Reserve System (US), Households and Nonprofit Organizations; One-TO-Four-Family Residential Mortgages; Liability, Level [HHMSDODNS], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/HHMSDODNS, November 9, 2020.
+  Real D_HH_DEBT[:] = {81378266666,
+                       52514958333,
+                       64837191666,
+                       160742241666,
+                       223795575000,
+                       213106858333,
+                       222196608333,
+                       225050325000,
+                       224380141666,
+                       252571816666,
+                       178566108333,
+                       159148133333,
+                       172143041666,
+                       212616800000,
+                       213791725000,
+                       234582483333,
+                       221855016666,
+                       247801283333,
+                       361217216666,
+                       407201091666,
+                       499916866666,
+                       629716216666,
+                       848917491666,
+                       974870033333,
+                       1053824191666,
+                       1128836258333,
+                       819618241666,
+                       325770583333,
+                       -107200041666,
+                       -138411333333,
+                       -290257925000,
+                       -218908016666,
+                       -140941491666,
+                       -31832408333,
+                       90886641666,
+                       251213225000,
+                       307854108333,
+                       348904233333,
+                       344428933333};
   
+// Effective Federal Funds Rate
+// Board of Governors of the Federal Reserve System (US), Effective Federal Funds Rate [FEDFUNDS], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/FEDFUNDS, November 9, 2020.
+  Real FUNDRATE[:]={0.163783333333333333,
+                    0.122583333333333333,
+                    0.090866666666666667,
+                    0.102250000000000000,
+                    0.081008333333333333,
+                    0.068050000000000000,
+                    0.066575000000000000,
+                    0.075683333333333333,
+                    0.092166666666666667,
+                    0.080991666666666667,
+                    0.056875000000000000,
+                    0.035216666666666667,
+                    0.030225000000000000,
+                    0.042016666666666667,
+                    0.058366666666666667,
+                    0.052983333333333333,
+                    0.054600000000000000,
+                    0.053533333333333333,
+                    0.049700000000000000,
+                    0.062358333333333333,
+                    0.038875000000000000,
+                    0.016666666666666667,
+                    0.011275000000000000,
+                    0.013491666666666667,
+                    0.032133333333333333,
+                    0.049641666666666667,
+                    0.050191666666666667,
+                    0.019275000000000000,
+                    0.0016000000000000000000,
+                    0.0017500000000000000000,
+                    0.0010166666666666666667,
+                    0.0014000000000000000000,
+                    0.0010750000000000000000,
+                    0.0008916666666666666667,
+                    0.0013250000000000000000,
+                    0.0039500000000000000000,
+                    0.0100166666666666666667,
+                    0.018316666666666667,
+                    0.021583333333333333};
+  
+// Unemployment rate
+// U.S. Bureau of Labor Statistics, Unemployment Rate [UNRATE], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/UNRATE, November 14, 2020.
+  Real UNRATE[:]={0.07616666666666666700,
+0.09708333333333333300,
+0.09600000000000000000,
+0.07508333333333333300,
+0.07191666666666666700,
+0.07000000000000000000,
+0.06175000000000000000,
+0.05491666666666666700,
+0.05258333333333333300,
+0.05616666666666666700,
+0.06850000000000000000,
+0.07491666666666666700,
+0.06908333333333333300,
+0.06100000000000000000,
+0.05591666666666666700,
+0.05408333333333333300,
+0.04941666666666666700,
+0.04500000000000000000,
+0.04216666666666666700,
+0.03966666666666666700,
+0.04741666666666666700,
+0.05783333333333333300,
+0.05991666666666666700,
+0.05541666666666666700,
+0.05083333333333333300,
+0.04608333333333333300,
+0.04616666666666666700,
+0.05800000000000000000,
+0.09283333333333333300,
+0.09608333333333333300,
+0.08933333333333333300,
+0.08075000000000000000,
+0.07358333333333333300,
+0.06158333333333333300,
+0.05275000000000000000,
+0.04875000000000000000,
+0.04341666666666666700,
+0.03891666666666666700,
+0.03666666666666666700};
+
+// Personal Saving Rate
+// U.S. Bureau of Economic Analysis, Personal Saving Rate [PSAVERT], 
+// retrieved from FRED, Federal Reserve Bank of St. Louis; https://fred.stlouisfed.org/series/PSAVERT, November 14, 2020.
+  
+  Real PSAVERT[:] = {11.7166666666666667,
+12.0416666666666667,
+10.0500000000000000,
+11.3250000000000000,
+9.1666666666666667,
+8.8250000000000000,
+7.9083333333333333,
+8.4750000000000000,
+8.3750000000000000,
+8.3666666666666667,
+8.8000000000000000,
+9.4500000000000000,
+7.9250000000000000,
+6.9083333333333333,
+6.9916666666666667,
+6.5583333333333333,
+6.3333333333333333,
+6.8000000000000000,
+5.0416666666666667,
+4.8083333333333333,
+5.0166666666666667,
+5.8333333333333333,
+5.5333333333333333,
+5.1166666666666667,
+3.0833333333333333,
+3.8000000000000000,
+3.6583333333333333,
+4.9833333333333333,
+6.1083333333333333,
+6.5500000000000000,
+7.1416666666666667,
+8.8250000000000000,
+6.3916666666666667,
+7.3500000000000000,
+7.5416666666666667,
+6.8833333333333333,
+7.1833333333333333,
+7.8416666666666667,
+7.5416666666666667};
+
+
   partial class BaseEconomy
     //--------------------------------------------
     // Auxiliary
@@ -54,7 +476,7 @@ model EconomicModels
       input Real u;
       output Real y;
     algorithm
-      y := if u > 0 then u else 0; //[1]
+      y := if u > 0 then u else 0; 
     end Ramp;
 
    function AlmostEqual
@@ -130,7 +552,6 @@ model EconomicModels
     Real UBR;            // Unemployment benefits to wages ratio  
     Real alpha_2;        // Propensity to consume out of wealth;
     Real beta;           // Expected real sales adjustment coefficient
-    Real beta_b;         // Expected bank own funds adjustment coefficient
     Real delta;          // Rate of depreciation of fixed capital    
     Real delta_rep;      // Household loans repayment rate
     Real delta_RES;      // Rate of depreciation of residential buildings
@@ -281,7 +702,7 @@ model EconomicModels
     Real YD_rh (start = 5e+12, fixed = false);            // Nominal disposable income, high income households    
     Real YD_rl (start = 5e+12, fixed = false);            // Nominal disposable income, low income households
     Real YP;                                              // Nominal personal income
-    Real YP_h (start = 5e+12, fixed = false);                                            // Nominal household income, high income households
+    Real YP_h (start = 5e+12, fixed = false);             // Nominal household income, high income households
     Real YP_l;                                            // Nominal household income, low income households
     Real add_l;                                           // Lending mark-up over deposit rate target
     Real c (start = 1e+9, fixed = false);                 // Real consumption
@@ -376,207 +797,248 @@ model EconomicModels
     Real x_CREDIMP;                                         // "Credit Impulse"
     Real x_RPSG;                                            // "Private Demand Growth"
  
+    // Probes for TFM
+    Real tfm_Cdom;                                          // Domestic consumption
+    Real tfm_FD;                                            // Total distributed profits
+    Real tfm_rlLf;                                          // Interests on firms loans
+    Real tfm_rlLhh;                                         // Interests on mortgages of high income households
+    Real tfm_rlLhl;                                         // Interests on mortgages of low income households
+    Real tfm_rlLfh;                                         // Interests on firm loans and mortgages
+    Real tfm_rmMdom;                                        // Interests on domestic bank deposits
+    Real tfm_rmM;                                           // Total interests on bank deposits
+    Real tfm_rmMfs;                                         // Interests on bank deposits of foreign sector
+    Real tfm_rmBh;                                          // Interests on bills held by households
+    Real tfm_rmBb;                                          // Interests on bills held by banks
+    Real tfm_rmBngs;                                        // Total interests on bills not held by central bank
+    Real tfm_rmBfs;                                         // Interests on bills held by foreign sector
+    Real tfm_der_Lf;                                        // Net lending to firms
+    Real tfm_der_Lhh;                                       // Net lending to high income households
+    Real tfm_der_Lhl;                                       // Net lending to low income households
+    Real tfm_der_L;                                         // Total net lending
+    Real tfm_der_Mdom;                                      // Net domestic saving in bank deposits
+    Real tfm_der_M;                                         // Total net saving in bank deposits
+    Real tfm_der_Mfs;                                       // Net saving in bank deposits of foreign sector
+    Real tfm_der_Hhh;                                       // Net high income household sector saving in currency
+    Real tfm_der_Hhl;                                       // Net low income household sector saving in currency
+    Real tfm_der_Hb;                                        // Net increase in the reserve position of banks
+    Real tfm_der_H;                                         // Total net saving in currency
+    Real tfm_der_Bh;                                        // Net domestic saving in government securities
+    Real tfm_der_Bb;                                        // Net acquisition of government securities by banks
+    Real tfm_der_Bcb;                                       // Net acquisition of government securities by central bank
+    Real tfm_der_B;                                         // Total net acquisition of government securities
+    Real tfm_der_Bfs;                                       // Net acquisition of government securities by foreign sector
+    Real tfm_der_e_pe;                                      // Net sales of equities
+      
+    Real sum_of_flows_Firms;
+    Real sum_of_flows_HH_H;
+    Real sum_of_flows_HH_L;
+    Real sum_of_flows_Banks;
+    Real sum_of_flows_CB;
+    Real sum_of_flows_Gov;
+    Real sum_of_flows_ForeignSector;
+
     //--------------------------------------------
     // Short-term equilibrium
-    //--------------------------------------------
-    equation
+    //--------------------------------------------    
+    equation // References to the Thesis are in brackets ()
+    
     //--------------------
     // Firms - aggregate demand, production and investment decisions
     //--------------------
-    y = _s_e + gamma * (in_T - _in); // [2]  
-    der(_s_e) = beta * (s - _s_e); // [3] 
-    in_T = sigma_T * _s_e; // [4]
-    der(_in) = y - s; // [5]
-    der(_k) = _k * log(1 + gr_k); // [6]
-    gr_k = ((1 + gr_pr) * ( 1 + gr_N) - 1) + gamma_u * (u - u_0); // [7]
-    u = y / _k; // [8]
-    rr_l = (1 + r_l) / (1 + pi) - 1; // [9]
-    pi = der(p) / p; // [10]   
-    i_f = (gr_k + delta) * _k; // [11]
-    i = i_f + i_h; // [12]
-    s = cd + _g + i; // [13]
-    S = s * p; // [14]
-    IN = _in * UC; // [15]
-    I_f = i_f * p; // [16]
-    I = I_f + I_h; // [17]
-    K = _k * p;  // [18]
-    Y = S + der(_in) * UC;  // [19]
+    y = _s_e + gamma * (in_T - _in); // (11)  
+    der(_s_e) = beta * (s - _s_e); // (12)
+    in_T = sigma_T * _s_e; // (13)
+    der(_in) = y - s; // (14)
+    der(_k) = _k * log(1 + gr_k); // (15)
+    gr_k = Ramp(((1 + gr_pr) * ( 1 + gr_N) - 1) + gamma_u * (u - u_0)); // (16)
+    u = y / _k; // (17)
+    rr_l = (1 + r_l) / (1 + pi) - 1; // (18)
+    pi = der(p) / p; // (19)
+    i_f = (gr_k + delta) * _k; // (20)
+    i = i_f + i_h; // (21)
+    s = cd + _g + i; // (22)
+    S = s * p; // (23)
+    IN = _in * UC; // (24)
+    I_f = i_f * p; // (25)
+    I = I_f + I_h; // (26)
+    K = _k * p;  // (27)
+    Y = S + der(_in) * UC;  // (28)
     
     //--------------------
     // The labour market
     //--------------------   
-    omega_r = omega_0 * (1 - omega_1 * Ramp(ER_min - ER) + omega_2 * Ramp(ER - ER_max)); // [20]
-    omega_t = omega_r * _pr; // [21]
-    ER = 1 - (1 - _LD / LS); // [22]
-    UR = Ramp(1 - ER); //[23]
-    der(_N) = _N * log(1 + gr_N); // [24]
-    LS = _N * LF_N; // [25]
-    der(_W) = Omega_3 * (omega_t * p - _W); // [26]
-    gr_pr =   if ER > ER_pr1 then gr_pr0 elseif ER > ER_pr0 then  gr_pr0 * (ER - ER_pr0) / (ER_pr1 - ER_pr0) else 0; // [27] 
-    der(_pr) = _pr * log(1 + gr_pr); // [28]
-    LD_T = y / _pr; // [29]
-    der(_LD) = eta_LD * Ramp(LD_T - _LD) - eta_LDr * Ramp(_LD - LD_T); // [30]
-    WB = _LD * _W; // [31]
-    WB_h = WB * HILD; // [32]
-    WB_l = WB * (1 - HILD); // [33]
-    UC = WB / y; // [34]
-    NUC = _W / _pr; // [35]
+    omega_r = omega_0 * (1 - omega_1 * Ramp(ER_min - ER) + omega_2 * Ramp(ER - ER_max)); // (29)
+    omega_t = omega_r * _pr; // (30)
+    ER = _LD / LS; // (31)
+    UR = Ramp(1 - ER); // (32)
+    der(_N) = _N * log(1 + gr_N); // (33)
+    LS = _N * LF_N; // (34)
+    der(_W) = Omega_3 * (omega_t * p - _W); // (35)
+    gr_pr =   if ER > ER_pr1 then gr_pr0 elseif ER > ER_pr0 then  gr_pr0 * (ER - ER_pr0) / (ER_pr1 - ER_pr0) else 0; // (36)
+    der(_pr) = _pr * log(1 + gr_pr); // (37)
+    LD_T = y / _pr; // (38)
+    der(_LD) = eta_LD * Ramp(LD_T - _LD) - eta_LDr * Ramp(_LD - LD_T); // (39)
+    WB = _LD * _W; // (40)
+    WB_h = WB * HILD; // (41)
+    WB_l = WB * (1 - HILD); // (42)
+    UC = WB / y; // (43)
+    NUC = _W / _pr; // (44)
 
     //--------------------
     // Prices, markups and profits
     //--------------------       
-    p = (1 + _phi) * NUC; // [36]
-    der(_phi) = epsilon_M * (phi_T - _phi); // [37]  
-    phi_T = (F_fT +  r_l * _L_f + T_f)/ (_s_e * UC); // [38]
-    T_f = F_f * Theta_f; // [39]
-    F_f = S - WB - r_l * _L_f - T_f; // [40]
-    F_fT = FU_fT + FD_f; // [41]
-    FU_fT = psi_U * I_f; // [42]
-    FD_f = psi_D * F_f; // [43]
-    FU_f = F_f - FD_f; // [44]
-    der(_L_f) = I_f - FU_f - NES; // [45]
-    der(_e) = NES / p_e; // [46]
-    NES = psi_N * I_f; // [47]
-    r_K = FD_f / (_e * p_e); // [48]
-    PE = _e * p_e / F_f; // [49]
-    q = (_e * p_e + _L_f) / (K + IN); // [50]
+    p = (1 + _phi) * NUC; // (45)
+    der(_phi) = epsilon_M * (phi_T - _phi); // (46)
+    phi_T = (F_fT +  r_l * _L_f + T_f)/ (_s_e * UC); // (47)
+    T_f = F_f * Theta_f; // (48)
+    F_f = S - WB - r_l * _L_f - T_f; // (49)
+    F_fT = FU_fT + FD_f; // (50)
+    FU_fT = psi_U * I_f; // (51)
+    FD_f = psi_D * F_f; // (52)
+    FU_f = F_f - FD_f; // (53)
+    der(_L_f) = I_f - FU_f - NES; // (54)
+    der(_e) = NES / p_e; // (55)
+    NES = psi_N * I_f; // (56)
+    r_K = FD_f / (_e * p_e); // (57)
+    PE = _e * p_e / F_f; // (58)
+    q = (_e * p_e + _L_f) / (K + IN); // (59)
     
     //--------------------
     // Households - income, consumption and financial wealth
     //--------------------
-    YP_h = WB_h + FD_f + FD_b + r_m * (M - M_FS) + r_m * B_h; // [51]
-    YP_l = WB_l; // [52]
-    YP = YP_l + YP_h; // [53]
-    T_hl = Theta_hl * YP_l; // [54]
-    T_hh = Theta_hh * YP_h; // [55]
-    T_h = T_hl + T_hh; // [56]
-    YD_rh = YP_h - T_hh - r_l * _L_hh; // [57]
-    YD_rl = YP_l - T_hl - r_l * _L_hl + UB; // [58]
-    UB = UR * UBR * WB_l; // [59]    
-    YD_r = YD_rl + YD_rh; // [60] 
-    yd_rh = YD_rh / p; // [61]
-    yd_rl = YD_rl / p; // [62]
-    yd_r = yd_rl + yd_rh; // [63]
-    der(_V_Mh) = YD_rh - C_h - I_hh + NL_h - NES; // [64]
-    der(_V_Ml) = YD_rl - C_l - I_hl + NL_l; // [65]
-    V_M = _V_Mh + _V_Ml; // [66]
-    V_fmah = _V_Mh - H_hh + _e * p_e; // [67]
-    V_MlT = lambda_c * C_l; // [68]
-    V_h = _V_Mh + _e * p_e + _OF - _L_hh + V_REh; // [69]
-    V_l = _V_Ml + V_REl - _L_hl; // [70]
-    V = V_h + V_l; // [71] 
-    v_h = V_h / p; // [72]
-    v_l = V_l / p; // [73]
-    v = v_h + v_l; // [74]
-    der(_v_he) = _v_he * log((1 + gr_N) * (1 + gr_pr)) + epsilon_vh * Ramp(v_h - _v_he) - epsilon_vhr * Ramp(_v_he - v_h); // [75]
-    c_h = alpha_2 * _v_he; // [76]
-    c_l = C_l / p; // [77]
-    c = c_l + c_h; // [78]
-    cd = (1 - mu) * c; // [79]
-    C_h = c_h * p;  // [80]
-    C_l = YD_rl + NL_l - I_hl - epsilon * (V_MlT - _V_Ml);  // [81]
-    C = C_l + C_h; // [82]
-    CD = (1 - mu) * C; // [83]
-    H_hh = lambda_c * C_h; // [84]
-    H_hl = _V_Ml; // [85]
-    H_h = H_hh + H_hl; // [86]
-    B_h = V_fmah * (lambda_20 + lambda_22 * r_m - lambda_24 * r_K - lambda_25 * YD_rh / V_h); // [87]
-    p_e = V_fmah / _e * (lambda_40 - lambda_42 * r_m + lambda_44 * r_K - lambda_45 * YD_rh / V_h); // [88] 
-    M = _V_Mh - B_h - H_hh + M_FS; // [89]
+    YP_h = WB_h + FD_f + FD_b + r_m * (M - M_FS) + r_m * B_h; // (60)
+    YP_l = WB_l; // (61)
+    YP = YP_l + YP_h; // (62)
+    T_hl = Theta_hl * YP_l; // (63)
+    T_hh = Theta_hh * YP_h; // (64)
+    T_h = T_hl + T_hh; // (65)
+    YD_rh = YP_h - T_hh - r_l * _L_hh; // (66)
+    YD_rl = YP_l - T_hl - r_l * _L_hl + UB; // (67)
+    UB = UR * UBR * _W * LS; // (68)
+    YD_r = YD_rl + YD_rh; // (69)
+    yd_rh = YD_rh / p; // (70)
+    yd_rl = YD_rl / p; // (71)
+    yd_r = yd_rl + yd_rh; // (72)
+    der(_V_Mh) = YD_rh - C_h - I_hh + NL_h - NES; // (73)
+    der(_V_Ml) = YD_rl - C_l - I_hl + NL_l; // (74)
+    V_M = _V_Mh + _V_Ml; // (75)
+    V_fmah = _V_Mh - H_hh + _e * p_e; // (76)
+    V_MlT = lambda_c * C_l; // (77)
+    V_h = _V_Mh + _e * p_e + _OF - _L_hh + V_REh; // (78)
+    V_l = _V_Ml + V_REl - _L_hl; // (79)
+    V = V_h + V_l; // (80)
+    v_h = V_h / p; // (81)
+    v_l = V_l / p; // (82)
+    v = v_h + v_l; // (83)
+    der(_v_he) = _v_he * log((1 + gr_N) * (1 + gr_pr)) + epsilon_vh * Ramp(v_h - _v_he) - epsilon_vhr * Ramp(_v_he - v_h); // (84)
+    c_h = alpha_2 * _v_he; // (85)
+    c_l = C_l / p; // (86)
+    c = c_l + c_h; // (87)
+    cd = (1 - mu) * c; // (88)
+    C_h = c_h * p;  // (89)
+    C_l = YD_rl + NL_l - I_hl - epsilon * (V_MlT - _V_Ml);  // (90)
+    C = C_l + C_h; // (91)
+    CD = (1 - mu) * C; // (92)
+    H_hh = lambda_c * C_h; // (93)
+    H_hl = _V_Ml; // (94)
+    H_h = H_hh + H_hl; // (95)
+    B_h = V_fmah * (lambda_20 + lambda_22 * r_m - lambda_24 * r_K - lambda_25 * YD_rh / V_h); // (96)
+    p_e = V_fmah / _e * (lambda_40 - lambda_42 * r_m + lambda_44 * r_K - lambda_45 * YD_rh / V_h); // (97)
+    M = _V_Mh - B_h - H_hh + M_FS; // (98)
     
     //--------------------
     // Households - mortgage lending and real estate assets
     //--------------------   
-    GL = eta * YD_r; // [90]
-    GL_h = HILE * GL; // [91]
-    GL_l = GL - GL_h; // [92]
-    REP_h = delta_rep * _L_hh; // [93]
-    REP_l = delta_rep * _L_hl; // [94]
-    REP = REP_h + REP_l; // [95]
-    NL_h = GL_h - REP_h; // [96]
-    NL_l = GL_l - REP_l; // [97]
-    NL = NL_h + NL_l; // [98]
-    der(_L_hh) = NL_h; // [99] 
-    der(_L_hl) = NL_l; // [100]
-    L_h = _L_hh + _L_hl; // [101]
-    nl_h = NL_h / p; // [102]
-    nl_l = NL_l / p; // [103]
-    nl = nl_h + nl_l; // [104]
-    I_hh = GL_h * IHMOV; // [105]
-    I_hl = GL_l * IHMOV; // [106]
-    I_h = I_hh + I_hl; // [107]                               
-    i_hh = I_hh / p; // [108]              
-    i_hl = I_hl / p; // [109]  
-    i_h = i_hh + i_hl; // [110]
-    V_REh = _L_hh * REMOR; // [111]
-    V_REl = _L_hl * REMOR; // [112]
-    V_RE = V_REh + V_REl; // [113]
-    v_REh = V_REh / p; // [114]
-    v_REl = V_REl / p; // [115]
-    v_RE = V_RE / p; // [116]
-    der(_v_RES) = i_h - _v_RES * delta_RES; // [117]
-    V_RES = p * _v_RES; // [118]
+    GL = eta * YD_r; // (99)
+    GL_h = HILE * GL; // (100)
+    GL_l = GL - GL_h; // (101)
+    REP_h = delta_rep * _L_hh; // (102)
+    REP_l = delta_rep * _L_hl; // (103)
+    REP = REP_h + REP_l; // (104)
+    NL_h = GL_h - REP_h; // (105)
+    NL_l = GL_l - REP_l; // (106)
+    NL = NL_h + NL_l; // (107)
+    der(_L_hh) = NL_h; // (108) 
+    der(_L_hl) = NL_l; // (109)
+    L_h = _L_hh + _L_hl; // (110)
+    nl_h = NL_h / p; // (111)
+    nl_l = NL_l / p; // (112)
+    nl = nl_h + nl_l; // (113)
+    I_hh = GL_h * IHMOV; // (114)
+    I_hl = GL_l * IHMOV; // (115)
+    I_h = I_hh + I_hl; // (116)                             
+    i_hh = I_hh / p; // (117)              
+    i_hl = I_hl / p; // (118)  
+    i_h = i_hh + i_hl; // (119)
+    V_REh = _L_hh * REMOR; // (120)
+    V_REl = _L_hl * REMOR; // (121)
+    V_RE = V_REh + V_REl; // (122)
+    v_REh = V_REh / p; // (123)
+    v_REl = V_REl / p; // (124)
+    v_RE = V_RE / p; // (125)
+    der(_v_RES) = i_h - _v_RES * delta_RES; // (126)
+    V_RES = p * _v_RES; // (127)
 
     //-----------------------------------------
     // The public sector
     //-----------------------------------------
-    T = T_hl + T_hh + T_f; // [119]
-    G = p * _g; // [120]
-    der(_g) = _g * log(1 + gr_g - epsilon_GYR * (_g/y - GYR)); // [121]
-    PSBR = G + r_m * (B_h + B_b + B_FS) - T + UB; // [122]
-    der(_B) = PSBR; // [123]
-    GD = B_b + B_h + H + B_FS; // [124]
-    H = H_b + H_h; // [125]
-    B_cb = H; // [126]
+    T = T_hl + T_hh + T_f; // (128)
+    G = p * _g; // (129)
+    der(_g) = _g * log(1 + gr_g - epsilon_GYR * (_g/y - GYR)); // (130)
+    PSBR = G + r_m * (B_h + B_b + B_FS) - T + UB; // (131)
+    der(_B) = PSBR; // (132)
+    GD = B_b + B_h + H + B_FS; // (133)
+    H = H_b + H_h; // (134)
+    B_cb = H; // (135)
 
     //-----------------------------------------
     // The foreign sector
     //-----------------------------------------
-    im = c * mu; // [127]
-    IM = C * mu; // [128]
-    der(_V_FS) = IM + r_m * B_FS + r_m * M_FS; // [129]
-    B_FS = lambda_50 * _V_FS; // [130]
-    M_FS = (1 - lambda_50) * _V_FS; // [131]
+    im = c * mu; // (136)
+    IM = C * mu; // (137)
+    der(_V_FS) = IM + r_m * B_FS + r_m * M_FS; // (138)
+    B_FS = lambda_50 * _V_FS; // (139)
+    M_FS = (1 - lambda_50) * _V_FS; // (140)
         
     //-----------------------------------------
     // The banking sector
     //-----------------------------------------
-    FU_b = F_b - FD_b; // [132]
-    der(_OF) = FU_b; // [131]
-    B_b = _B - B_h - B_cb - B_FS; // [133]
-    F_b = r_l * (_L_f + L_h) + r_m * B_b - r_m * M; // [135]
-    H_b = rho * M; // [136]
-    r_l = r_m + add_l; // [137]
-    OF_T = NCAR * (_L_f + L_h); // [138]
-    FU_bT = Ramp(der(OF_T)); // [139]
-    FD_b = r_K *_OF; // [140]
-    F_bT = FD_b + FU_bT; // [141]
-    add_l = (F_bT - r_m * B_b + r_m * (M - _L_f - L_h)) / (_L_f + L_h); // [142]
-    CAR = _OF / (_L_f + L_h); // [143]
+    FU_b = F_b - FD_b; // (141)
+    der(_OF) = FU_b; // (142)
+    B_b = _B - B_h - B_cb - B_FS; // (143)
+    F_b = r_l * (_L_f + L_h) + r_m * B_b - r_m * M; // (144)
+    H_b = rho * M; // (145)
+    r_l = r_m + add_l; // (146)
+    OF_T = NCAR * (_L_f + L_h); // (147)
+    FU_bT = Ramp(der(OF_T)); // (148)
+    FD_b = r_K *_OF; // (149)
+    F_bT = FD_b + FU_bT; // (150)
+    add_l = (F_bT - r_m * B_b + r_m * (M - _L_f - L_h)) / (_L_f + L_h); // (151)
+    CAR = _OF / (_L_f + L_h); // (152)
     
     //--------------------------------------------
     // Sanity checks 
     //--------------------------------------------
-    x_Y_exp = CD + I + G; // [146]
-    x_Y_inc = WB + F_b + F_f + _L_f * r_l; // [147]      
-    x_A_B = _L_f + L_h + B_b + H_b; // [149] 
-    x_LE_B = _OF + M; // [150] 
-    x_M_d = V_M  + M_FS - B_h - H_h; // [152]
-    x_M_s = _L_f + L_h + B_b + H_b - _OF; // [153] 
-    x_LE_GB = _B + _L_f + L_h - _OF; // [156] 
+    x_Y_exp = CD + I + G; // (155)
+    x_Y_inc = WB + F_b + F_f + _L_f * r_l; // (156)
+    x_A_B = _L_f + L_h + B_b + H_b; // (158)
+    x_LE_B = _OF + M; // (159)
+    x_M_d = V_M  + M_FS - B_h - H_h; // (161)
+    x_M_s = _L_f + L_h + B_b + H_b - _OF; // (162)
+    x_LE_GB = _B + _L_f + L_h - _OF; // (165)
     
     assert(AlmostEqual(Y,x_Y_exp),
-      "GDP calculated using the production (value added) and expenditure approach must be almost the same"); // [144]
+      "GDP calculated using the production (value added) and expenditure approach must be almost the same"); // (153)
     assert(AlmostEqual(Y,x_Y_inc),
-      "GDP calculated using the production (value added) and income approach must be almost the same"); // [145]
+      "GDP calculated using the production (value added) and income approach must be almost the same"); // (154)
     assert(AlmostEqual(x_A_B,x_LE_B),
-      "Banks assets and liabilities + equity must be equal"); // [148]
+      "Banks assets and liabilities + equity must be equal"); // (157)
     assert(AlmostEqual(x_M_d,x_M_s),
-      "Money demand calculated from all households broad money stock must be almost the same as the money supply calculated from banks asset sheet"); // [151]
+      "Money demand calculated from all households broad money stock must be almost the same as the money supply calculated from banks asset sheet"); // (160)
     assert(AlmostEqual(M,x_M_d),
-      "Money demand calculated from high-income households broad money stock must be almost the same as the money demad calculated for all households"); // [154]
+      "Money demand calculated from high-income households broad money stock must be almost the same as the money demad calculated for all households"); // (163)
     assert(AlmostEqual(V_M + _V_FS,x_LE_GB),
-      "Stock of broad money must be equal to the stock of government securities held by the private and foreign sectors + bank assets - bank capital"); // [155]
+      "Stock of broad money must be equal to the stock of government securities held by the private and foreign sectors + bank assets - bank capital"); // (164))
        
     //-----------------------------------------
     // Probes
@@ -622,6 +1084,45 @@ model EconomicModels
     x_CREDIMP = der(der(_L_f + L_h) / Y);
     x_RPSG = der(c + i) / ( c + i) - (1 + gr_N) * (1 + gr_pr) + 1;
     
+    // Probes for TFM
+    tfm_Cdom = C - IM;
+    tfm_FD = FD_f + FD_b;
+    tfm_rlLf = r_l * _L_f;
+    tfm_rlLhh = r_l * _L_hh;
+    tfm_rlLhl = r_l * _L_hl;
+    tfm_rlLfh = r_l * (_L_f + _L_hh + _L_hl);
+    tfm_rmMdom = r_m * (M - M_FS);
+    tfm_rmM = r_m * M;
+    tfm_rmMfs = r_m * M_FS;
+    tfm_rmBh = r_m * B_h;
+    tfm_rmBb = r_m * B_b;
+    tfm_rmBngs = r_m * (_B-B_cb);
+    tfm_rmBfs = r_m * B_FS;
+    tfm_der_Lf = I_f - FU_f - NES;//der(_L_f);
+    tfm_der_Lhh = NL_h;//der(_L_hh);
+    tfm_der_Lhl = NL_l;//der(_L_hl); 
+    tfm_der_L = tfm_der_Lf + tfm_der_Lhh + tfm_der_Lhl;
+    tfm_der_Mdom = der(M-M_FS);
+    tfm_der_M = der(M); 
+    tfm_der_Mfs = der(M_FS);                                      
+    tfm_der_Hhh = der(H_hh);
+    tfm_der_Hhl = der(H_hl);
+    tfm_der_Hb = der(H_b); 
+    tfm_der_H = der(H);
+    tfm_der_Bh = der(B_h);
+    tfm_der_Bb = der(B_b); 
+    tfm_der_Bcb = der(B_cb);
+    tfm_der_B = PSBR;//der(_B);
+    tfm_der_Bfs = der(B_FS);
+    tfm_der_e_pe = NES;//der(_e) * p_e;   
+   
+    sum_of_flows_Firms = tfm_Cdom + I_h + G - T_f - WB - FD_f - tfm_rlLf + tfm_der_Lf  + tfm_der_e_pe;
+    sum_of_flows_HH_H = -C_h - I_hh - T_hh + WB_h + tfm_FD - tfm_rlLhh + tfm_rmMdom + tfm_rmBh + tfm_der_Lhh - tfm_der_Mdom - tfm_der_Hhh - tfm_der_Bh - tfm_der_e_pe;
+    sum_of_flows_HH_L = -C_l - I_hl - T_hl + WB_l + UB - tfm_rlLhl + tfm_der_Lhl - tfm_der_Hhl;
+    sum_of_flows_Banks = -FD_b + tfm_rlLfh - tfm_rmM + tfm_rmBb - tfm_der_L  + tfm_der_M - tfm_der_Hb - tfm_der_Bb;
+    sum_of_flows_CB = tfm_der_H - tfm_der_Bcb;
+    sum_of_flows_Gov = -G + T - UB - tfm_rmBngs + tfm_der_B;
+    sum_of_flows_ForeignSector = IM + r_m * M_FS + tfm_rmBfs - tfm_der_Mfs - tfm_der_Bfs;
 
     //--------------------------------------------
     // Validation of individual variables
@@ -670,7 +1171,7 @@ model EconomicModels
     assert(GL > 0, "Gross Lending to households (Mortgage Origination Volume) must be > 0");
     assert(GL_h > 0, "Gross Lending (Mortgage Origination Volume) to high-income households must be > 0");
     assert(GL_l > 0, "Gross Lending (Mortgage Origination Volume) to low-income households must be > 0");
-    assert(gr_k > 0, "Real Capital Stock Growth Rate must be > 0");
+    assert(gr_k >= -0.001, "Real Capital Stock Growth Rate must be >= 0");
     assert(gr_pr >= -0.001, "Productivity Growth Rate must be >= 0");
     assert(H_b > 0, "Bank Reserves must be > 0");
     assert(H_h > 0, "Amount of Cash Held by Households must be > 0");
@@ -705,7 +1206,7 @@ model EconomicModels
     assert(p > 0, "Normal Cost Pricing must be > 0");
     assert(PE > 0, "Price to Earnings Ratio must be > 0");
     assert(phi_T > 0, "Actual Mark-up target must be > 0");
-    assert(pi > -0.02, "Price Inflation Rate must be > -0.02");
+    assert(pi > -0.03, "Price Inflation Rate must be > -0.03");
     // NO assert(PSBR > 0, " Nominal Government Deficit must be > 0");
     assert(q > 0, "Tobin's q Ratio must be > 0");
     assert(r_K > 0, "Firms Dividend Yield must be > 0");
@@ -762,12 +1263,11 @@ model EconomicModels
     assert(v_l > 0, "Real net wealth low income households must be > 0");
     assert(v > 0, "Real net wealth must be > 0");
     assert(UB >= 0, "Unemployment Benefits (source of household income) must be >= 0");
-    
+   
     //--------------------------------------------
     // parameters
     //--------------------------------------------
     beta = 12;
-    beta_b = 12;
     delta = 0.10667;
     delta_RES = 0.02; 
     delta_rep = 0.15; 
@@ -787,8 +1287,8 @@ model EconomicModels
     NCAR = 0.1;
     ER_max = 0.96;   // 4%
     ER_min = 0.935;  // 6.5%
-    omega_1 = 1.0;   // deflation
-    omega_2 = 2.0;   // inflation
+    omega_1 = 1.0;   // in deflation
+    omega_2 = 2.0;   // in inflation
     HILE = 0.4;
     HIN = 0.2;
     Omega_3 = 0.5;   // time constant
@@ -797,7 +1297,7 @@ model EconomicModels
     sigma_N = 6;
     sigma_se = 6;
     sigma_T = 0.2;
-    UBR = 0.25;
+    UBR = 0.14251;
     psi_U = 0.75;     
     psi_N = 0.04;            
     alpha_2 = 0.1;
@@ -816,7 +1316,7 @@ model EconomicModels
     //--------------------------------------------
     initial equation     
     _B =     3.30735e+12;
-    _LD =    1.05384e+08;
+    _LD =    1.14025488e+8;
     _L_f =   1.29836e+12;
     _L_hh =  6.65301e+11; 
     _L_hl =  9.97951e+11; 
@@ -825,20 +1325,19 @@ model EconomicModels
     _V_FS =  2.95484e+12;  
     _V_Mh =  2.94351e+12;  
     _V_Ml =  7.44108e+10;  
-    _W =     29542.1;	    
-    _e =     1e+09;	    
-    _g =     1.99622e+12/1.079649798;
-    _in =    1.64577e+12/1.079649798;
-    _k =     9.83102e+12/1.079649798;
+    _W =     27303.23475;
+    _e =     1e+09;
+    _g =     1.84895139e+12;
+    _in =    1.52435540e+12;
+    _k =     9.10574893e+12;
     _phi =   0.265515;
-    _pr =    78000/1.079649798;  
-    _s_e =   8.28676e+12/1.079649798;
-    _v_RES = 8.31591e+12/1.079649798;  
-    _v_he =  1.5774e+13/1.079649798;       
+    _pr =    66770.47013;  
+    _s_e =   7.67541476e+12;
+    _v_RES = 7.70241426e+12;
+    _v_he =  1.46102931e+13;
  end BaseEconomy;
 
-
-    
+   
   //--------------------------------------------
   // The baseline foreign deficit scenario
   //--------------------------------------------
@@ -918,7 +1417,7 @@ model EconomicModels
     GYR = 0.23889;
     mu = 0.0350; 
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
@@ -945,20 +1444,20 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
     ER_pr0 = 0.90;    
   end simulatedFiscalStimulusScenario; 
   simulatedFiscalStimulusScenario simulatedFiscalStimulus;
- 
+
   //--------------------------------------------
   // Scenario FiscalExperiment
   //--------------------------------------------
   class simulatedFiscalExperimentScenario
     extends BaseEconomy;
-    FilteredRampEdges fre_gr_g(t = {1985, 1986, 1987, 1988}, u = {0.0302, 0.01, 0.0302}); 
+    FilteredRampEdges fre_gr_g(t = {1985, 1986, 1987, 1988}, u = {0.0302, 0.0085, 0.0302}); 
     equation  
     lambda_40 = 0.5;
     r_m = 0.04;
@@ -972,7 +1471,7 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
     ER_pr1 = 0.90;
@@ -980,7 +1479,7 @@ model EconomicModels
   end simulatedFiscalExperimentScenario; 
   simulatedFiscalExperimentScenario simulatedFiscalExperiment; 
  
-   //--------------------------------------------
+  //--------------------------------------------
   // Scenario ProductivityExperiment
   //--------------------------------------------
   class simulatedProductivityExperimentScenario
@@ -999,15 +1498,14 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
     ER_pr1 = fre_ER_pr1.y;
-    ER_pr0 = 0.2;    
+    ER_pr0 = 0.3;    
   end simulatedProductivityExperimentScenario; 
   simulatedProductivityExperimentScenario simulatedProductivityExperiment; 
- 
- 
+   
   //--------------------------------------------
   // Scenario TradeBalanceChanges
   //--------------------------------------------
@@ -1027,7 +1525,7 @@ model EconomicModels
     GYR = 0.23888;
     mu = fre_mu.y;
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
@@ -1040,7 +1538,7 @@ model EconomicModels
   //--------------------------------------------
   class simulatedMonetaryStimulusScenario
     extends BaseEconomy;
-    FilteredRampEdges fre_r_m(t = {2001, 2002}, u = {0.04, 0.03});  
+    FilteredRampEdges fre_r_m(t = {1991, 1992}, u = {0.04, 0.03});  
     equation  
     lambda_40 = 0.5;
     r_m = fre_r_m.y; 
@@ -1054,40 +1552,13 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;      
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;  
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
     ER_pr0 = 0.90;    
   end simulatedMonetaryStimulusScenario; 
   simulatedMonetaryStimulusScenario simulatedMonetaryStimulus; 
-
-  //--------------------------------------------
-  // Scenario FiscalWithdrawal
-  //--------------------------------------------
-  class simulatedFiscalWithdrawalScenario
-    extends BaseEconomy;
-    FilteredRampEdges fre_gr_g(t = {1985, 1986, 1987, 1988}, u = {0.0302, 0.02587, 0.0302}); 
-    equation  
-    lambda_40 = 0.5;
-    r_m = 0.04;
-    gr_g = fre_gr_g.y; 
-    psi_D = 0.30; 
-    eta = 0.14; 
-    epsilon_GYR = 0;
-    omega_0 = 0.88;
-    HILD = 0.4; 
-    REMOR = 3.3;   
-    GYR = 0.23888;
-    mu = 0.0350;     
-    u_0 = 0.85;
-    LF_N = 0.47;
-    Theta_hh = 0.35;      
-    Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
-  end simulatedFiscalWithdrawalScenario; 
-  simulatedFiscalWithdrawalScenario simulatedFiscalWithdrawal; 
 
   //--------------------------------------------
   // Scenario DistributionalChanges
@@ -1108,7 +1579,7 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;      
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;       
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
@@ -1136,7 +1607,7 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = fre_u_0.y;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;    
     Theta_hl = 0.1475; 
     ER_pr1 = 0.94;
@@ -1149,7 +1620,7 @@ model EconomicModels
   //--------------------------------------------
   class simulatedHousingBubbleScenario
     extends BaseEconomy;
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2006, 2009, 2011, 2016}, u = {0.14, 0.18, 0.13, 0.14});
+    FilteredRampEdges fre_eta(t = {1990, 1995, 1996, 1999, 2001, 2006}, u = {0.14, 0.18, 0.13, 0.14});
     equation
     lambda_40 = 0.5;
     r_m = 0.04;
@@ -1163,11 +1634,11 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
+    ER_pr1 = 0.54; // switch off
+    ER_pr0 = 0.50;    
   end simulatedHousingBubbleScenario;
   simulatedHousingBubbleScenario simulatedHousingBubble;
   
@@ -1176,8 +1647,8 @@ model EconomicModels
   //--------------------------------------------
    class simulatedHousingBubblePriceCrashScenario
     extends BaseEconomy;
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2006, 2009, 2011, 2016}, u = {0.14, 0.18, 0.13, 0.14});
-    FilteredRampEdges fre_REMOR(t = {2007.5, 2009, 2012, 2015}, u = {3.3, 3.0, 3.3});
+    FilteredRampEdges fre_eta(t = {1990, 1995, 1996, 1999, 2001, 2006}, u = {0.14, 0.18, 0.13, 0.14});
+    FilteredRampEdges fre_REMOR(t = {1997.5, 1999, 2002, 2005}, u = {3.3, 3.0, 3.3});
     equation
     lambda_40 = 0.5;
     r_m = 0.04;
@@ -1191,271 +1662,259 @@ model EconomicModels
     GYR = 0.23888;
     mu = 0.0350;     
     u_0 = 0.85;
-    LF_N = 0.47;
+    LF_N = 0.50854;
     Theta_hh = 0.35;      
     Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
+    ER_pr1 = 0.54;  // switch off
+    ER_pr0 = 0.50;    
   end simulatedHousingBubblePriceCrashScenario;
-  simulatedHousingBubblePriceCrashScenario simulatedHousingBubblePriceCrash;
+  simulatedHousingBubblePriceCrashScenario simulatedHousingBubblePriceCrash; 
   
   //--------------------------------------------
-  // Scenario HistoricalNoBubblesNoStimulus
+  // Historical Scenarios
   //--------------------------------------------
-   class simulatedHistoricalNoBubblesNoStimulusScenario
+  partial class baseSimulatedHistorical
     extends BaseEconomy;
     // Trend changes
-    FilteredRampEdges fre_psi_D(t = {1985, 2005}, u = {0.30, 0.36});
-    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012}, u = {0.88, 0.85, 0.83}); 
+    FilteredRampEdges fre_psi_D(t = {1990, 2005}, u = {0.30, 0.36});
+    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012, 2016, 2017}, u = {0.88, 0.85, 0.83, 0.84}); 
     FilteredRampEdges fre_HILD(t = {1985, 2005}, u = {0.4, 0.43}); 
-    FilteredRampEdges fre_GYR(t = {1991, 1998, 2015, 2017}, u = {0.23888, 0.234, 0.228});
-    FilteredRampEdges fre_mu(t = {1988, 1989, 1990, 2004, 2005, 2009}, u = {0.0350, 0.01, 0.09, 0.045});
-    FilteredInterpolate fi_LF_N(t = {1980, 1989, 2007, 2009, 2012, 2015, 2019, 2020}, u = {0.47, 0.47, 0.465, 0.46, 0.45, 0.44, 0.435, 0.435});
-    FilteredRampEdges fre_Theta_hh(t = {2008, 2009, 2017, 2018}, u = {0.35, 0.33, 0.30});  
-    
+    FilteredRampEdges fre_GYR(t = {1991, 1998, 2000, 2002, 2015, 2017}, u = {0.23888, 0.227, 0.2365, 0.235});
+    FilteredRampEdges fre_mu(t = {1988, 1990, 1992, 2005, 2008, 2009, 2013, 2014}, u = {0.0350, 0.0, 0.09, 0.05, 0.04});
+    FilteredInterpolate fi_LF_N(t = {1984, 1988, 2000, 2007, 2009, 2012, 2016, 2019, 2020}, u = {0.50854, 0.50, 0.52, 0.508, 0.50, 0.48, 0.47, 0.465, 0.46});
+    FilteredRampEdges fre_Theta_hh(t = {1985, 1986, 1999, 2000, 2008, 2009, 2017, 2018}, u = {0.35, 0.36, 0.35, 0.33, 0.32});      
+    // May not be used in some scenarios    
+    // The Sharemarket Bubble
+    FilteredRampEdges fre_lambda_40(t = {1995, 1999, 2000, 2001, 2005, 2007, 2007.5, 2008, 2008.5, 2010}, u = {0.50, 0.60, 0.50, 0.52, 0.46, 0.50});
+    FilteredRampEdges fre_u_0(t = {1995, 1999, 2000, 2001, 2005, 2007, 2007.5, 2008}, u = {0.85, 0.62, 0.85, 0.77, 0.85});    
+    // The Housing Bubble
+    FilteredRampEdges fre_eta(t = {2000, 2005, 2007, 2009, 2011, 2016}, u = {0.14, 0.24, 0.11, 0.125});  
+    FilteredRampEdges fre_REMOR(t = {2007, 2009.5, 2012, 2015}, u = {3.3, 2.25, 3.3});         
+    // The Stimulus
+    FilteredRampEdges fre_r_m(t = {1985, 1986, 2000, 2002, 2004, 2006, 2007, 2008.5, 2015, 2018}, u = {0.04, 0.05, 0.01, 0.05, 0.001, 0.02});    
+    FilteredRampEdges fre_gr_g(t = {2001, 2001.5, 2002, 2002.5, 2003.5, 2004, 2004.5, 2005,  2007.5, 2008.5, 2009.5, 2010.5, 2013, 2014, 2015, 2016}, u = {0.0302, 0.06, 0.0302, 0.0, 0.0302, 0.09, 0.0302, -0.03, 0.0302}); 
+       
     equation
-    lambda_40 = 0.5;
     psi_D = fre_psi_D.y;
-    eta = 0.14; 
     omega_0 = fre_omega_0.y;
     HILD = fre_HILD.y;
-    REMOR = 3.3;   
-    epsilon_GYR = 1;
     GYR = fre_GYR.y;
-    mu = fre_mu.y;
-    u_0 = 0.85;
+    mu = fre_mu.y;  
     LF_N = fi_LF_N.y;
+    Theta_hh = fre_Theta_hh.y;  
+   
+    epsilon_GYR = 1;
+    Theta_hl = 0.1475; 
+    ER_pr1 = 0.935;
+    ER_pr0 = 0.90;    
+end baseSimulatedHistorical;
+ 
+  //--------------------------------------------
+  // Scenario HistoricalNoBubblesNoStimuli
+  //--------------------------------------------
+   class simulatedHistoricalNoBubblesNoStimuliScenario
+    extends baseSimulatedHistorical;   
+    equation
+    lambda_40 = 0.5;
+    eta = 0.14; 
+    REMOR = 3.3;   
+    u_0 = 0.85;
     r_m = 0.04;
     gr_g = 0.0302;
-    Theta_hh = fre_Theta_hh.y;  
-    Theta_hl = 0.1475; 
-    ER_pr1 = 0.915;
-    ER_pr0 = 0.80;    
-  end simulatedHistoricalNoBubblesNoStimulusScenario;
-  simulatedHistoricalNoBubblesNoStimulusScenario simulatedHistoricalNoBubblesNoStimulus;
- 
+  end simulatedHistoricalNoBubblesNoStimuliScenario;
+  simulatedHistoricalNoBubblesNoStimuliScenario simulatedHistoricalNoBubblesNoStimuli;
+  
+  //--------------------------------------------
+  // Scenario HistoricalNoStimuli
+  //--------------------------------------------
+   class simulatedHistoricalNoStimuliScenario
+    extends baseSimulatedHistorical;
+   equation
+    lambda_40 = fre_lambda_40.y;
+    eta = fre_eta.y;
+    REMOR = fre_REMOR.y;
+    u_0 = fre_u_0.y;
+    r_m = 0.04;
+    gr_g = 0.0302;
+  end simulatedHistoricalNoStimuliScenario;
+  simulatedHistoricalNoStimuliScenario simulatedHistoricalNoStimuli;
+
+
   //--------------------------------------------
   // Scenario HistoricalNoFiscalStimulus
   //--------------------------------------------
-   class simulatedHistoricalNoStimulusScenario
-    extends BaseEconomy;
-    // Trend changes
-    FilteredRampEdges fre_psi_D(t = {1985, 2005}, u = {0.30, 0.36});
-    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012}, u = {0.88, 0.85, 0.83}); 
-    FilteredRampEdges fre_HILD(t = {1985, 2005}, u = {0.4, 0.43}); 
-    FilteredRampEdges fre_GYR(t = {1991, 1998, 2015, 2017}, u = {0.23888, 0.234, 0.228});
-    FilteredRampEdges fre_mu(t = {1988, 1989, 1990, 2004, 2005, 2009}, u = {0.0350, 0.01, 0.09, 0.045});
-    FilteredInterpolate fi_LF_N(t = {1980, 1989, 2007, 2009, 2012, 2015, 2019, 2020}, u = {0.47, 0.47, 0.465, 0.46, 0.45, 0.44, 0.435, 0.435});
-    FilteredRampEdges fre_Theta_hh(t = {2008, 2009, 2017, 2018}, u = {0.35, 0.33, 0.30});  
-    // The Dotcom Bubble
-    FilteredRampEdges fre_lambda_40(t = {1995, 1999, 2000, 2002}, u = {0.50, 0.60, 0.50});
-    FilteredRampEdges fre_u_0(t = {1995, 1999, 2000, 2002, 2005, 2008, 2009, 2010}, u = {0.85, 0.74, 0.85, 0.78, 0.85});    
-    // The Housing Bubble
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2007, 2009, 2011, 2016}, u = {0.14, 0.25, 0.11, 0.14});  
-    FilteredRampEdges fre_REMOR(t = {2007.5, 2009, 2012, 2015}, u = {3.3, 2.25, 3.3});         
-    // The Stimulus
-    FilteredRampEdges fre_r_m(t = {2001, 2002, 2004, 2007, 2008, 2009, 2015, 2018}, u = {0.04, 0.02, 0.06, 0.01, 0.02});  
-
+   class simulatedHistoricalNoFiscalStimulusScenario
+    extends baseSimulatedHistorical;
    equation
     lambda_40 = fre_lambda_40.y;
-    psi_D = fre_psi_D.y;
     eta = fre_eta.y;
-    omega_0 = fre_omega_0.y;
-    HILD = fre_HILD.y;
     REMOR = fre_REMOR.y;
-    epsilon_GYR = 1;
-    GYR = fre_GYR.y;
-    mu = fre_mu.y;
     u_0 = fre_u_0.y;
-    LF_N = fi_LF_N.y;
     r_m = fre_r_m.y;
     gr_g = 0.0302;
-    Theta_hh = fre_Theta_hh.y;  
-    Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.82;    
-  end simulatedHistoricalNoStimulusScenario;
-  simulatedHistoricalNoStimulusScenario simulatedHistoricalNoStimulus;
+  end simulatedHistoricalNoFiscalStimulusScenario;
+  simulatedHistoricalNoFiscalStimulusScenario simulatedHistoricalNoFiscalStimulus;
 
   //--------------------------------------------
-  // Scenario Historical
+  // Scenario HistoricalGFC
   //--------------------------------------------  
-  class simulatedHistoricalScenario
-    extends BaseEconomy;
-    // Trend changes
-    FilteredRampEdges fre_psi_D(t = {1985, 2005}, u = {0.30, 0.36});
-    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012}, u = {0.88, 0.85, 0.83}); 
-    FilteredRampEdges fre_HILD(t = {1985, 2005}, u = {0.4, 0.43}); 
-    FilteredRampEdges fre_GYR(t = {1991, 1998, 2015, 2017}, u = {0.23888, 0.234, 0.228});
-    FilteredRampEdges fre_mu(t = {1988, 1989, 1990, 2004, 2005, 2009}, u = {0.0350, 0.01, 0.09, 0.045});
-    FilteredInterpolate fi_LF_N(t = {1980, 1989, 2007, 2009, 2012, 2015, 2019, 2020}, u = {0.47, 0.47, 0.465, 0.46, 0.45, 0.44, 0.435, 0.435});
-    FilteredRampEdges fre_Theta_hh(t = {2008, 2009, 2017, 2018}, u = {0.35, 0.33, 0.30});  
-    // The Dotcom Bubble
-    FilteredRampEdges fre_lambda_40(t = {1995, 1999, 2000, 2002}, u = {0.50, 0.60, 0.50});
-    FilteredRampEdges fre_u_0(t = {1995, 1999, 2000, 2002, 2005, 2008, 2009, 2010}, u = {0.85, 0.74, 0.85, 0.78, 0.85});    
-    // The Housing Bubble
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2007, 2009, 2011, 2016}, u = {0.14, 0.25, 0.11, 0.14});  
-    FilteredRampEdges fre_REMOR(t = {2007.5, 2009, 2012, 2015}, u = {3.3, 2.25, 3.3});         
-    // The Stimulus
-    FilteredRampEdges fre_r_m(t = {2001, 2002, 2004, 2007, 2008, 2009, 2015, 2018}, u = {0.04, 0.02, 0.06, 0.01, 0.02});  
-    FilteredRampEdges fre_gr_g(t = {2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016}, u = {0.0302, 0.11, 0.0302, -0.03, 0.0302}); 
-         
+  class simulatedHistoricalGfcScenario
+    extends baseSimulatedHistorical;         
     equation
     lambda_40 = fre_lambda_40.y;
-    psi_D = fre_psi_D.y;
     eta = fre_eta.y;
-    omega_0 = fre_omega_0.y;
-    HILD = fre_HILD.y;
     REMOR = fre_REMOR.y;
-    epsilon_GYR = 1;
-    GYR = fre_GYR.y;
-    mu = fre_mu.y;
-    u_0 = fre_u_0.y; 
-    LF_N = fi_LF_N.y;
+    u_0 = fre_u_0.y;
     r_m = fre_r_m.y;
     gr_g = fre_gr_g.y;
-    Theta_hh = fre_Theta_hh.y;  
-    Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
-  end simulatedHistoricalScenario;
-  simulatedHistoricalScenario simulatedHistorical;
+  end simulatedHistoricalGfcScenario;
+  simulatedHistoricalGfcScenario simulatedHistoricalGFC;
   
-  //--------------------------------------------
-  // To simulate growth in the long run, disable other scenarios
-  // Scenario Historical + Fiscal Expansion
-  //--------------------------------------------
-  class simulatedFiscalExpansionScenario
-    extends BaseEconomy;
-    // Trend changes
-    FilteredRampEdges fre_psi_D(t = {1985, 2005}, u = {0.30, 0.36});
-    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012}, u = {0.88, 0.85, 0.83}); 
-    FilteredRampEdges fre_HILD(t = {1985, 2005}, u = {0.4, 0.43}); 
-    FilteredRampEdges fre_mu(t = {1988, 1989, 1990, 2004, 2005, 2009}, u = {0.0350, 0.01, 0.09, 0.045});
-    FilteredInterpolate fi_LF_N(t = {1980, 1989, 2007, 2009, 2012, 2015, 2019, 2020}, u = {0.47, 0.47, 0.465, 0.46, 0.45, 0.44, 0.435, 0.435});
-    FilteredRampEdges fre_Theta_hh(t = {2008, 2009, 2017, 2018}, u = {0.35, 0.33, 0.30});  
-    // The Dotcom Bubble
-    FilteredRampEdges fre_lambda_40(t = {1995, 1999, 2000, 2002}, u = {0.50, 0.60, 0.50});
-    FilteredRampEdges fre_u_0(t = {1995, 1999, 2000, 2002, 2005, 2008, 2009, 2010}, u = {0.85, 0.74, 0.85, 0.78, 0.85});    
-    // The Housing Bubble
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2007, 2009, 2011, 2016}, u = {0.14, 0.25, 0.11, 0.14});  
-    FilteredRampEdges fre_REMOR(t = {2007.5, 2009, 2012, 2015}, u = {3.3, 2.25, 3.3});         
-    // The Stimulus
-    FilteredRampEdges fre_r_m(t = {2001, 2002, 2004, 2007, 2008, 2009, 2015, 2018}, u = {0.04, 0.02, 0.06, 0.01, 0.02});  
-    FilteredRampEdges fre_gr_g(t = {2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016, 2017, 2017.5, 2018, 2018.5}, u = {0.0302, 0.11, 0.0302, -0.03, 0.0302, 0.10, 0.0302}); 
-    FilteredRampEdges fre_GYR(t = {1991, 1998, 2017, 2018}, u = {0.23888, 0.234, 0.24});    
-          
-    equation
-    lambda_40 = fre_lambda_40.y;
-    psi_D = fre_psi_D.y;
-    eta = fre_eta.y;
-    omega_0 = fre_omega_0.y;
-    HILD = fre_HILD.y;
-    REMOR = fre_REMOR.y;
-    epsilon_GYR = 1;
-    GYR = fre_GYR.y;
-    mu = fre_mu.y;
-    u_0 = fre_u_0.y; 
-    LF_N = fi_LF_N.y;
-    r_m = fre_r_m.y;
-    gr_g = fre_gr_g.y;
-    Theta_hh = fre_Theta_hh.y;  
-    Theta_hl = 0.1475; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
-end simulatedFiscalExpansionScenario;
-  simulatedFiscalExpansionScenario simulatedFiscalExpansion;
- 
-  //--------------------------------------------
-  // To simulate growth in the long run, disable other scenarios
-  // Scenario Historical + Income Redistribution
-  //--------------------------------------------
-  class simulatedIncomeRedistributionScenario
-    extends BaseEconomy;
-    // Trend changes
-    FilteredRampEdges fre_psi_D(t = {1985, 2005}, u = {0.30, 0.36});
-    FilteredRampEdges fre_omega_0(t = {1985, 2005, 2009, 2012}, u = {0.88, 0.85, 0.83}); 
-    FilteredRampEdges fre_HILD(t = {1985, 2005}, u = {0.4, 0.43}); 
-    FilteredRampEdges fre_GYR(t = {1991, 1998, 2015, 2017}, u = {0.23888, 0.234, 0.228});
-    FilteredRampEdges fre_mu(t = {1988, 1989, 1990, 2004, 2005, 2009}, u = {0.0350, 0.01, 0.09, 0.045});
-    FilteredInterpolate fi_LF_N(t = {1980, 1989, 2007, 2009, 2012, 2015, 2019, 2020}, u = {0.47, 0.47, 0.465, 0.46, 0.45, 0.44, 0.435, 0.435});
-    // The Dotcom Bubble
-    FilteredRampEdges fre_lambda_40(t = {1995, 1999, 2000, 2002}, u = {0.50, 0.60, 0.50});
-    FilteredRampEdges fre_u_0(t = {1995, 1999, 2000, 2002, 2005, 2008, 2009, 2010}, u = {0.85, 0.74, 0.85, 0.78, 0.85});    
-    // The Housing Bubble
-    FilteredRampEdges fre_eta(t = {2000, 2005, 2007, 2009, 2011, 2016}, u = {0.14, 0.25, 0.11, 0.14});  
-    FilteredRampEdges fre_REMOR(t = {2007.5, 2009, 2012, 2015}, u = {3.3, 2.25, 3.3});         
-    // The Stimulus
-    FilteredRampEdges fre_r_m(t = {2001, 2002, 2004, 2007, 2008, 2009, 2015, 2018}, u = {0.04, 0.02, 0.06, 0.01, 0.02});  
-    FilteredRampEdges fre_gr_g(t = {2008, 2009, 2010, 2011, 2013, 2014, 2015, 2016}, u = {0.0302, 0.11, 0.0302, -0.03, 0.0302});     
-    // The Income Redistribution    
-    FilteredRampEdges fre_Theta_hh(t = {2008, 2009, 2017, 2018}, u = {0.35, 0.33, 0.35});      
-    FilteredRampEdges fre_Theta_hl(t = {2017, 2018}, u = {0.1475, 0.08});      
-    
-         
-    equation
-    lambda_40 = fre_lambda_40.y;
-    psi_D = fre_psi_D.y;
-    eta = fre_eta.y;
-    omega_0 = fre_omega_0.y;
-    HILD = fre_HILD.y;
-    REMOR = fre_REMOR.y;
-    epsilon_GYR = 1;
-    GYR = fre_GYR.y;
-    mu = fre_mu.y;
-    u_0 = fre_u_0.y; 
-    LF_N = fi_LF_N.y;
-    r_m = fre_r_m.y;
-    gr_g = fre_gr_g.y;
-    Theta_hh = fre_Theta_hh.y;  
-    Theta_hl = fre_Theta_hl.y; 
-    ER_pr1 = 0.94;
-    ER_pr0 = 0.90;    
-  end simulatedIncomeRedistributionScenario;
-  simulatedIncomeRedistributionScenario simulatedIncomeRedistribution;
   
   //--------------------------------------------
   // probes
   //--------------------------------------------
   
   Real x_y_actualHistorical;  
-  Real x_YP_hh__YP_actualRatio;   
+  Real x_YD_hh__YD_actualRatio;   
+  Real x_G__Y_actualHistorical;
+  Real x_NETIM__Y_actualHistorical;
+  Real x_LS_actualHistorical;
+  Real x_LD_actualHistorical;
+  Real x_D_Lh_actualHistorical;
+  Real x_r_m_actualHistorical;
+  Real x_UR_actualHistorical;
+  Real x_PSAVERT_actualHistorical;
+  
   Real x_Dy_simulatedFiscalStimulus_to_y_Reference; 
   Real x_Dg_simulatedFiscalStimulus_to_y_Reference; 
-  Real x_Dy_simulatedFiscalWithdrawal_to_y_Reference; 
-  Real x_Dg_simulatedFiscalWithdrawal_to_y_Reference; 
+  Real x_Dy_simulatedFiscalExperiment_to_y_Reference; 
+  Real x_Dg_simulatedFiscalExperiment_to_y_Reference; 
   Real x_Dy_simulatedTradeBalanceChanges_to_y_Reference;  
   Real x_y_simulatedFiscalStimulus_to_y_Reference;  
+  
+  Real x_Dyd_r_simulatedFiscalStimulus_to_y_Reference;  
+  Real x_Dc_h_simulatedFiscalStimulus_to_y_Reference;  
+  Real x_Dc_l_simulatedFiscalStimulus_to_y_Reference;  
+  Real x_Dyd_r_simulatedFiscalExperiment_to_y_Reference;  
+  Real x_Dc_h_simulatedFiscalExperiment_to_y_Reference;  
+  Real x_Dc_l_simulatedFiscalExperiment_to_y_Reference; 
+  
+  Real x_Dy_simulatedMonetaryStimulus_to_y_Reference; 
+  Real x_Dyd_r_simulatedMonetaryStimulus_to_y_Reference;  
+  Real x_Dc_h_simulatedMonetaryStimulus_to_y_Reference;  
+  Real x_Dc_l_simulatedMonetaryStimulus_to_y_Reference;    
+  
+  Real x_Dv_simulatedHousingBubble_to_v_Reference;
+  Real x_Dv_he_simulatedHousingBubble_to_v_Reference;
+  Real x_Dv_simulatedHousingBubblePriceCrash_to_v_Reference;
+  Real x_Dv_he_simulatedHousingBubblePriceCrash_to_v_Reference;
+  Real x_Dyd_r_simulatedHousingBubble_to_y_Reference;  
+  Real x_Dc_h_simulatedHousingBubble_to_y_Reference;  
+  Real x_Dc_l_simulatedHousingBubble_to_y_Reference;    
+  Real x_Dyd_r_simulatedHousingBubblePriceCrash_to_y_Reference;  
+  Real x_Dc_h_simulatedHousingBubblePriceCrash_to_y_Reference;  
+  Real x_Dc_l_simulatedHousingBubblePriceCrash_to_y_Reference;    
+  Real x_Di_f_simulatedHousingBubble_to_y_Reference;    
+  Real x_Di_f_simulatedHousingBubblePriceCrash_to_y_Reference;    
+  
   Real x_y_simulatedTradeBalanceChanges_to_y_Reference;
   Real x_y_simulatedMonetaryStimulus_to_y_Reference;
-  Real x_y_simulatedFiscalWithdrawal_to_y_Reference;
   Real x_y_simulatedDistributionalChanges_to_y_Reference;
   Real x_y_simulatedStockmarketBubble_to_y_Reference;
   Real x_y_simulatedHousingBubble_to_y_Reference;
   Real x_y_simulatedHousingBubblePriceCrash_to_y_Reference;
-  Real x_y_simulatedHistorical_to_y_Reference;
+  Real x_y_simulatedHistoricalGFC_to_y_Reference;    
   Real x_yd_rh_simulatedDistributionalChanges_to_yd_rh_Reference;
   Real x_yd_rl_simulatedDistributionalChanges_to_yd_rl_Reference;
-
+    
+  Real x_Dr_l_simulatedMonetaryStimulus;
+  Real x_Dphi_T_simulatedMonetaryStimulus_to_phi_T_Reference;
+  Real x_Dphi_simulatedMonetaryStimulus_to_phi_Reference;
+  Real x_Dp_simulatedMonetaryStimulus_to_p_Reference;
+    
+    
+  // aliases for phase space graphs
+  Real FiscalStimulus_ProfitShareOfGDP;
+  Real FiscalStimulus_EmploymentRate;
+  Real FiscalStimulus_LabourShareOfGDP;
+  Real FiscalStimulus_RelativeGDP;    
+  Real HousingBubble_ProfitShareOfGDP;
+  Real HousingBubble_EmploymentRate;
+  Real HousingBubble_LabourShareOfGDP;
+  Real HousingBubble_RelativeGDP; 
+  Real EmploymentRate;
+  Real omega_r;
+  
   equation
-    x_YP_hh__YP_actualRatio = Modelica.Math.Vectors.interpolate(years, high_income_ratios, time); 
-    x_y_actualHistorical = Modelica.Math.Vectors.interpolate(years,y_values, time); 
+    x_YD_hh__YD_actualRatio = Modelica.Math.Vectors.interpolate(years, high_income_ratios, time); 
+    x_y_actualHistorical = Modelica.Math.Vectors.interpolate(quarters, y_values*1000000000, time); 
+    x_G__Y_actualHistorical = Modelica.Math.Vectors.interpolate(years, GCEA_GDPA, time);  
+    x_NETIM__Y_actualHistorical =  Modelica.Math.Vectors.interpolate(years, NETFI_GDP, time); 
+    x_LS_actualHistorical = Modelica.Math.Vectors.interpolate(years, CLF16OV, time);
+    x_LD_actualHistorical = Modelica.Math.Vectors.interpolate(years, CE16OV, time);
+    x_D_Lh_actualHistorical = Modelica.Math.Vectors.interpolate(years, D_HH_DEBT, time);
+    x_r_m_actualHistorical = Modelica.Math.Vectors.interpolate(years,FUNDRATE, time);
+    x_UR_actualHistorical = Modelica.Math.Vectors.interpolate(years,UNRATE, time);
+    x_PSAVERT_actualHistorical = Modelica.Math.Vectors.interpolate(years,PSAVERT/100.0, time);
+
     x_Dy_simulatedFiscalStimulus_to_y_Reference = (simulatedFiscalStimulus.y - simulatedReference.y) / simulatedReference.y; 
     x_Dg_simulatedFiscalStimulus_to_y_Reference = (simulatedFiscalStimulus._g - simulatedReference._g) / simulatedReference.y;  
-    x_Dy_simulatedFiscalWithdrawal_to_y_Reference = (simulatedFiscalWithdrawal.y - simulatedReference.y) / simulatedReference.y; 
-    x_Dg_simulatedFiscalWithdrawal_to_y_Reference = (simulatedFiscalWithdrawal._g - simulatedReference._g) / simulatedReference.y;  
-    x_Dy_simulatedTradeBalanceChanges_to_y_Reference = (simulatedTradeBalanceChanges.y - simulatedReference.y) / simulatedReference.y;
+    x_Dy_simulatedFiscalExperiment_to_y_Reference = (simulatedFiscalExperiment.y - simulatedReference.y) / simulatedReference.y; 
+    x_Dg_simulatedFiscalExperiment_to_y_Reference = (simulatedFiscalExperiment._g - simulatedReference._g) / simulatedReference.y;  
+    x_Dy_simulatedTradeBalanceChanges_to_y_Reference = (simulatedTradeBalanceChanges.y - simulatedReference.y) / simulatedReference.y;       
     x_y_simulatedFiscalStimulus_to_y_Reference = simulatedFiscalStimulus.y / simulatedReference.y;
+    
+    x_Dyd_r_simulatedFiscalStimulus_to_y_Reference = (simulatedFiscalStimulus.yd_r - simulatedReference.yd_r) / simulatedReference.y;
+    x_Dc_h_simulatedFiscalStimulus_to_y_Reference = (simulatedFiscalStimulus.c_h - simulatedReference.c_h) / simulatedReference.y;
+    x_Dc_l_simulatedFiscalStimulus_to_y_Reference = (simulatedFiscalStimulus.c_l - simulatedReference.c_l) / simulatedReference.y;
+    x_Dyd_r_simulatedFiscalExperiment_to_y_Reference = (simulatedFiscalExperiment.yd_r - simulatedReference.yd_r) / simulatedReference.y;
+    x_Dc_h_simulatedFiscalExperiment_to_y_Reference = (simulatedFiscalExperiment.c_h - simulatedReference.c_h) / simulatedReference.y;
+    x_Dc_l_simulatedFiscalExperiment_to_y_Reference = (simulatedFiscalExperiment.c_l - simulatedReference.c_l) / simulatedReference.y;
+    
+    x_Dy_simulatedMonetaryStimulus_to_y_Reference = (simulatedMonetaryStimulus.y - simulatedReference.y) / simulatedReference.y; 
+    x_Dyd_r_simulatedMonetaryStimulus_to_y_Reference = (simulatedMonetaryStimulus.yd_r - simulatedReference.yd_r) / simulatedReference.y;
+    x_Dc_h_simulatedMonetaryStimulus_to_y_Reference = (simulatedMonetaryStimulus.c_h - simulatedReference.c_h) / simulatedReference.y;  
+    x_Dc_l_simulatedMonetaryStimulus_to_y_Reference = (simulatedMonetaryStimulus.c_l - simulatedReference.c_l) / simulatedReference.y;
+
+    x_Dv_simulatedHousingBubble_to_v_Reference = (simulatedHousingBubble.v - simulatedReference.v) / simulatedReference.v;
+    x_Dv_he_simulatedHousingBubble_to_v_Reference = (simulatedHousingBubble._v_he - simulatedReference._v_he) / simulatedReference.v;
+    x_Dv_simulatedHousingBubblePriceCrash_to_v_Reference = (simulatedHousingBubblePriceCrash.v - simulatedReference.v) / simulatedReference.v;
+    x_Dv_he_simulatedHousingBubblePriceCrash_to_v_Reference = (simulatedHousingBubblePriceCrash._v_he - simulatedReference._v_he) / simulatedReference.v;
+    x_Dyd_r_simulatedHousingBubble_to_y_Reference = (simulatedHousingBubble.yd_r - simulatedReference.yd_r) / simulatedReference.y;  
+    x_Dc_h_simulatedHousingBubble_to_y_Reference = (simulatedHousingBubble.c_h - simulatedReference.c_h) / simulatedReference.y;  
+    x_Dc_l_simulatedHousingBubble_to_y_Reference = (simulatedHousingBubble.c_l - simulatedReference.c_l) / simulatedReference.y;    
+    x_Dyd_r_simulatedHousingBubblePriceCrash_to_y_Reference = (simulatedHousingBubblePriceCrash.yd_r - simulatedReference.yd_r) / simulatedReference.y;  
+    x_Dc_h_simulatedHousingBubblePriceCrash_to_y_Reference = (simulatedHousingBubblePriceCrash.c_h - simulatedReference.c_h) / simulatedReference.y;  
+    x_Dc_l_simulatedHousingBubblePriceCrash_to_y_Reference = (simulatedHousingBubblePriceCrash.c_l - simulatedReference.c_l) / simulatedReference.y;        
+    x_Di_f_simulatedHousingBubble_to_y_Reference = (simulatedHousingBubble.i_f - simulatedReference.i_f) / simulatedReference.y;
+    x_Di_f_simulatedHousingBubblePriceCrash_to_y_Reference = (simulatedHousingBubblePriceCrash.i_f - simulatedReference.i_f) / simulatedReference.y;    
+       
     x_y_simulatedTradeBalanceChanges_to_y_Reference = simulatedTradeBalanceChanges.y / simulatedReference.y;
     x_y_simulatedMonetaryStimulus_to_y_Reference = simulatedMonetaryStimulus.y / simulatedReference.y;   
-    x_y_simulatedFiscalWithdrawal_to_y_Reference = simulatedFiscalWithdrawal.y / simulatedReference.y;            
     x_y_simulatedDistributionalChanges_to_y_Reference = simulatedDistributionalChanges.y / simulatedReference.y;    
     x_y_simulatedStockmarketBubble_to_y_Reference = simulatedStockmarketBubble.y / simulatedReference.y; 
     x_y_simulatedHousingBubble_to_y_Reference = simulatedHousingBubble.y / simulatedReference.y; 
     x_y_simulatedHousingBubblePriceCrash_to_y_Reference = simulatedHousingBubblePriceCrash.y / simulatedReference.y; 
-    x_y_simulatedHistorical_to_y_Reference = simulatedHistorical.y / simulatedReference.y;
+    x_y_simulatedHistoricalGFC_to_y_Reference = simulatedHistoricalGFC.y / simulatedReference.y;    
     x_yd_rh_simulatedDistributionalChanges_to_yd_rh_Reference = simulatedDistributionalChanges.yd_rh/simulatedReference.yd_rh;        
-    x_yd_rl_simulatedDistributionalChanges_to_yd_rl_Reference = simulatedDistributionalChanges.yd_rl/simulatedReference.yd_rl;        
+    x_yd_rl_simulatedDistributionalChanges_to_yd_rl_Reference = simulatedDistributionalChanges.yd_rl/simulatedReference.yd_rl;     
+
+    x_Dr_l_simulatedMonetaryStimulus = simulatedMonetaryStimulus.r_l - simulatedReference.r_l;  
+    x_Dphi_T_simulatedMonetaryStimulus_to_phi_T_Reference = (simulatedMonetaryStimulus.phi_T - simulatedReference.phi_T) / simulatedReference.phi_T;  
+    x_Dphi_simulatedMonetaryStimulus_to_phi_Reference = (simulatedMonetaryStimulus._phi - simulatedReference._phi) / simulatedReference._phi;  
+    x_Dp_simulatedMonetaryStimulus_to_p_Reference = (simulatedMonetaryStimulus.p - simulatedReference.p)  / simulatedReference.p;  
+          
+    FiscalStimulus_ProfitShareOfGDP = simulatedFiscalStimulus.x_F__Y;
+    FiscalStimulus_EmploymentRate = simulatedFiscalStimulus.ER;
+    FiscalStimulus_LabourShareOfGDP = simulatedFiscalStimulus.x_WB__Y;
+    FiscalStimulus_RelativeGDP = x_y_simulatedFiscalStimulus_to_y_Reference;    
+    HousingBubble_ProfitShareOfGDP = simulatedHousingBubble.x_F__Y;
+    HousingBubble_EmploymentRate = simulatedHousingBubble.ER;
+    HousingBubble_LabourShareOfGDP = simulatedHousingBubble.x_WB__Y;
+    HousingBubble_RelativeGDP = x_y_simulatedHousingBubble_to_y_Reference;    
+    EmploymentRate = simulatedTradeBalanceChanges.ER;
+    omega_r = simulatedTradeBalanceChanges.omega_r;
   annotation(
       experiment(StartTime = 1984, StopTime = 2019, Tolerance = 1e-6, Interval = 0.01),
     __OpenModelica_simulationFlags( lv = "LOG_STATS", s = "dassl", nls = "homotopy", ls = "totalpivot"));
